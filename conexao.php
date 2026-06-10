@@ -1,13 +1,15 @@
 <?php
+// Configurações para conectar no MySQL Workbench
+$host = "localhost";                     // Mantém localhost
+$user = "root";                          // O usuário padrão do Workbench também é root
+$pass = "Nog0610@";        // ⚠️ COLOQUE AQUI A SENHA QUE VOCÊ USA PARA ENTRAR NO WORKBENCH
+$banco = "eventos_universitarios";       // Nome do banco que você criou pelo script
 
-$host = 'localhost';
-$db = 'eventos_universitarios';
-$user = 'root';
-$pass = 'Senha12345@';
+// Criando a conexão com o banco
+$conexao = mysqli_connect($host, $user, $pass, $banco);
 
-$conexao = mysqli_connect($host, $user, $pass, $db);
-
+// Verifica se a conexão falhou para te avisar na tela
 if (!$conexao) {
-    die('Falha na conex�o com o banco de dados: ' . mysqli_connect_error());
+    die("Erro ao conectar ao MySQL Workbench: " . mysqli_connect_error());
 }
 ?>
